@@ -30,10 +30,36 @@ block content
 						li 版本: V1.0
 						li 发布: 2017.07.20
 				hr
-				
-				button.btn.btn-outline-primary.btn-sm(onclick="OL_TrainTickets.Request()") 更新火车站数据
-					
+
+				h2 查询火车票
+				label 乘车日期
+				input.form-control(type="date" placeholder="日期")#ol_tt_date
+				br
+
+				label 站点
+				div.form-inline
+					.input-group
+						input.form-control(type="text" placeholder="出发站")#ol_tt_fromStation
+					.input-group
+						input.form-control(type="text" placeholder="终点站")#ol_tt_toStation
+					|  
+					button.btn.btn-outline-primary(onclick="OL_TrainTickets.query()") 查询
+				br
+
+				//-查询结果列表
+				div#ol_tt_result
+
 				hr
+
+
+				br
+				br
+				div(style="display:none;")
+					hr
+					h2 维护
+					button.btn.btn-outline-danger.btn-sm(onclick="OL_TrainTickets.rebase()") 更新火车站数据
+					hr
+
 				br
 				br
 				br
@@ -45,4 +71,6 @@ block content
 
 
 	script(src='/js/lib/jquery.min.js')
+	script(src='/js/public.js')
 	script(src='/js/function.js')
+	script(src='/js/stations_py.js')

@@ -19,6 +19,32 @@ body{
   color: #444;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+small,
+span,
+input,
+select,
+textarea,
+button {
+  font-family: Microsoft Yahei;
+}
+
+select,
+optgroup,
+button {
+  cursor: pointer;
+  font-family: Microsoft Yahei;
+}
+
+th {
+    text-align: center;
+}
+
 
 /* Others */
 .font-ms{
@@ -463,11 +489,19 @@ a > .hover-purple:hover{
   font-size: 50px;
   color: #fff;
   background-image: 
-		-webkit-animation-timing-function: ease-in-out;
-		-webkit-animation-name: bigiconfadeIn;
-		-webkit-animation-duration: 300ms;
-		-webkit-animation-iteration-count: infinite;
-		-webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: bigiconfadeIn;
+    -webkit-animation-duration: 300ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+.loading1{
+  background-image: 
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: bigiconfadeIn;
+    -webkit-animation-duration: 300ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
 }
 	
 @-webkit-keyframes bigiconfadeIn {
@@ -483,3 +517,27 @@ a > .hover-purple:hover{
 	100% { opacity: 1;}
 }	
 
+
+.mask {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #000;
+  opacity: .5;
+  z-index: 999;
+}
+.modalbox {
+  padding: 30px 20px;
+  background: #fff;
+  border: 1px #eee solid;
+  position: fixed;
+  top: 100px;
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1000;
+}

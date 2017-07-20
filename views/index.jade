@@ -1,0 +1,48 @@
+extends layout
+
+block content
+	nav.ol-pc-only.navbar.navbar-inverse.bg-primary.navbar-toggleable-md.fixed-top
+		button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#ol_navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+			span.navbar-toggler-icon
+		.container
+			a.navbar-brand(href="https://www.onelib.biz")
+				img(draggable='false' src='images/logo_sm.png', height='25', alt='#{webname}')
+			.collapse.navbar-collapse#ol_navbar
+				ul.navbar-nav.mr-auto
+					li.nav-item
+						a.nav-link(href="https://www.onelib.biz/blog") 博客
+					li.nav-item
+						a.nav-link(href="https://www.onelib.biz/blog/w") 写作
+					li.nav-item
+						a.nav-link(href="https://www.onelib.biz/works") 工作
+					li.nav-item
+						a.nav-link(href="http://www.tangyuan.live" target="_blank") 汤圆直播
+					li.nav-item.active
+						a.nav-link(href="/") 工具
+			
+	.container-fluid(style='margin-top:90px; padding:0px;')
+		.row
+			.offset-md-3.col-md-6.col-12
+				h1 火车票查询工具
+				blockquote.blockquote(style='margin-bottom:0px;')
+					ul(style='list-style:none; font-size:15px; padding-left:5px; margin-bottom:0px;')
+						li 制作: 林晓州
+						li 版本: V1.0
+						li 发布: 2017.07.20
+				hr
+				
+				button.btn.btn-outline-primary.btn-sm(onclick="OL_TrainTickets.Request()") 更新火车站数据
+					
+				hr
+				br
+				br
+				br
+				br
+				br
+				p.text-center
+					small 制作: <a href="https://www.linxiaozhou.com" target="_blank">林晓州</a> | 网站: <a href="https://www.onelib.biz" target="_blank">OneLib智库</a>
+				
+
+
+	script(src='/js/lib/jquery.min.js')
+	script(src='/js/function.js')

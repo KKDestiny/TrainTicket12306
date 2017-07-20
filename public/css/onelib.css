@@ -1,0 +1,485 @@
+/**
+ * @Brief: Onelib Dashboard
+ */
+
+a {
+  color: #28a0ff;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #2289DB;
+  text-decoration: underline;
+}
+
+/* Body */
+body{
+  font-family: Microsoft Yahei;
+  overflow-x: hidden;
+  color: #444;
+}
+
+
+/* Others */
+.font-ms{
+  font-family: Microsoft Yahei;
+}
+.hide{
+  display:none;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.middle{
+  font-size: 90%;
+}
+.small{
+  font-size: 80%;
+}
+.exsmall{
+  font-size: 60%;
+  font-weight: normal;
+}
+.large{
+  font-size: 120%;
+}
+.italic
+{
+  font-style: italic;
+}
+
+.not-select{
+  -webkit-user-select: none;
+  -moz-user-select: none; /* for Firefox */	
+}
+.limit-length-short
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 75%;
+  display: inline-block;
+}
+.limit-length1
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 85%;
+  display: inline-block;
+}
+.limit-length
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 98%;
+  display: inline-block;
+}
+.limit-length-full
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+}
+
+
+.btn-round{
+  border-radius: 5px;;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2289DB;
+  border-color: #2289DB;
+}
+
+.btn-purple {
+  color: #fff;
+  background-color: #660099;
+  border-color: #660099;
+}
+.btn-purple:active,
+.btn-purple:focus,
+.btn-purple:hover {
+  color: #fff;
+  background-color: #6600CC;
+}
+
+.btn-report {
+  color: #fff;
+  background-color: #6633FF;
+  border-color: #6600FF;
+}
+.btn-report:active,
+.btn-report:focus,
+.btn-report:hover {
+  color: #fff;
+  background-color: #6600CC;
+}
+.btn-report.active {
+  color: #fff;
+  background-color: #6600CC;
+}
+
+
+.btn-orange {
+  color: #fff;
+  background-color: #FF6600;
+}
+.btn-orange:hover {
+  color: #fff;
+  background-color: #FF9933;
+}
+.btn-orange.active {
+  color: #fff;
+  background-color: #FF0000;
+}
+
+.bg-success{
+  background-color: #00CC66;
+  color: #fff;
+}
+.bg-primary{
+  background-color: #2289DB;
+  color: #fff;
+}
+.bg-purple{
+  background-color: #660099;
+  color: #fff;
+}
+
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #2289DB;
+  border-color: #2e6da4;
+}
+.btn-primary .badge {
+  color: #2289DB;
+  background-color: #fff;
+}
+
+
+.timestamp{
+  color: #b5b5b5;
+  font-size: 70%;
+}
+
+
+/* Elem */
+a.a-report{
+  color: #6600FF;
+}
+
+.hover-display{
+  display:none;
+}
+*:hover > .hover-display{
+  display:inline;
+}
+
+.red{
+	color: #EF0000;
+}
+.hover-red:hover{
+  cursor: pointer;
+  color:#EF0000;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+.delete{
+  text-decoration:line-through;
+  opacity: .5;
+}
+
+.green{
+	color: #5cb85c;
+}
+.hover-green:hover{
+  cursor: pointer;
+  color:#5cb85c;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+
+.hover-white:hover{
+  cursor: pointer;
+  color:#fff;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+.black{
+	color: #343434;
+}
+.grey{
+	color: #999;
+}
+.light-grey{
+	color: #aaa;
+}
+.disabled-grey{
+	color: #bbb;
+	opacity:.5;
+}
+.hover-grey:hover{
+  cursor: pointer;
+  color:#999;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+.assign{
+  color: #ff9b9b;
+}
+
+.primary,
+.blue{
+	color:#2289DB;
+}
+.hover-blue:hover{
+  cursor: pointer;
+  color:#2289DB;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+.orange{
+	color:#F89406;
+}
+.report{
+	color:#6600FF;
+}
+.hover-report:hover{
+  cursor: pointer;
+  color:#6600FF;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+
+.test{
+	color:#66CCFF;
+}
+.hover-test:hover{
+  cursor: pointer;
+  color:#66CCFF;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+.purple{
+	color:#660099;
+}
+a > .hover-purple:hover{
+  color: #660099;
+  text-decoration: underline;
+}
+.hover-purple:hover{
+  cursor: pointer;
+  color:#660099;
+	-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+	transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
+
+.hover{
+	cursor:pointer;
+}
+
+.font-ms{
+	font-family: Microsoft Yahei;
+}
+
+.bg-white{
+  background-color: #fff
+}
+
+
+.text-label{
+  background-color:#888;
+  border-radius:4px;
+  color:snow;
+  font-size:10px;
+  opacity: .6;
+  cursor: pointer;
+}
+.text-label.middle{
+  font-size: 60%;
+}
+.text-label.large{
+  font-size: 80%;
+}
+.text-label.default{
+  background-color:#999;
+  color:snow;
+}
+.text-label.info{
+  background-color:#2298DB;
+  color:snow;
+}
+.text-label.error{
+  background-color:#C00000;
+  color:snow;
+}
+.text-label.danger{
+  background-color:#C00000;
+  color:snow;
+}
+.text-label.red{
+  background-color:#EF0000;
+  color:snow;
+}
+.text-label.warning{
+  background-color:#F89406;
+  color:snow;
+}
+.text-label.success{
+  background-color:#00CC66;
+  color:snow;
+}
+.text-label.assign{
+  background-color:#ff9b9b;
+  color:snow;
+}
+.text-label:hover{
+  opacity: 1;
+}
+.text-label.active{
+  opacity: 1;
+}
+
+
+/* 滚动条 */
+.scrollbar::-webkit-scrollbar-track
+{
+  background-color: #e1e1e1;
+}
+.scrollbar::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #e1e1e1;
+}
+.scrollbar.shortscroll::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: #e1e1e1;
+}
+.scrollbar::-webkit-scrollbar-thumb
+{
+  background-color: #888;	
+}
+
+
+
+
+
+
+
+
+/* 动画效果 */
+.flash{
+  background-image: 
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-name: blink;
+		-webkit-animation-duration: 200ms;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+}
+.flash-slow{
+  background-image: 
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-name: blink;
+		-webkit-animation-duration: 1000ms;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+}
+.flash-hover:hover{
+  cursor:pointer;
+  background-image: 
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-name: blink;
+		-webkit-animation-duration: 200ms;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+}
+@-webkit-keyframes blink{
+	0% { opacity: .2; }
+	100% { opacity: 9; }
+}
+@-webkit-keyframes blink1{
+	0% { opacity: .1; }
+	15% { opacity: .3; }
+	35% { opacity: .6; }
+	50% { opacity: .65; }
+	65% { opacity: .7; }
+	85% { opacity: .75; }
+	100% { opacity: 8; }
+}
+
+.loading{
+  position: fixed;
+  top: 30%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+  background-image: 
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-name: bigiconfadeIn;
+		-webkit-animation-duration: 300ms;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+}
+	
+@-webkit-keyframes bigiconfadeIn {
+	0% { opacity: 1; }
+	10% { opacity: .8;}
+	20% { opacity: .7;}
+	30% { opacity: .6;}
+	40% { opacity: .5;}
+	50% { opacity: .6;}
+	70% { opacity: .7;}
+	80% { opacity: .8;}
+	90% { opacity: .9;}
+	100% { opacity: 1;}
+}	
+

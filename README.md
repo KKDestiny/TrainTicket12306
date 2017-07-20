@@ -1,10 +1,8 @@
-> github地址： https://github.com/KKDestiny/TrainTicket12306.git
-
----
 
 # TrainTicket12306
 
 这是一款用于在铁道部12306官网爬取车票等信息的node.js应用。
+
 An app to query Tickects and other information from 12306 website by node.js
 
 ---
@@ -12,9 +10,11 @@ An app to query Tickects and other information from 12306 website by node.js
 # 1.安装 Installation
 
 + 如果直接使用模块`TrainTickects`，则不需要任何依赖，直接引用此模块即可。
+
 Require `TrainTickects` directly if you just want to use `TrainTickects` module.
 
-+ 如果你要查看网页Demo，则需要安装，直接执行 `npm install` 即可
++ 如果你要查看网页Demo，则需要安装，直接执行 `npm install` 即可。
+
 Execute `npm install` to install modules needed automaticly if you want to check website demo.
 
 ---
@@ -22,6 +22,7 @@ Execute `npm install` to install modules needed automaticly if you want to check
 # 2.文件结构 FileStructure
 
 主要文件结构如下：
+
 Main Structure:
 
 ```
@@ -52,16 +53,23 @@ root
 
 请求方式为：
 Request:
+
 `https`
 
+
 Host：
+
 `kyfw.12306.cn/`
 
+
 查询前缀为：
-Query Prefix
+Query Prefix:
+
 `/otn/`
 
+
 已知的几个接口有：
+
 Known interfaces as follows:
 
 |Interface | name  | rule | Demo |

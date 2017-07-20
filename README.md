@@ -7,6 +7,18 @@ An app to query Tickects and other information from 12306 website by node.js
 
 ---
 
+## master branch
+
+master分支为最新功能，所有功能都会最终同步到这里。
+
+---
+
+## element branch
+
+element分支为所有功能的原型
+
+---
+
 # 1.安装 Installation
 
 + 如果直接使用模块`TrainTickects`，则不需要任何依赖，直接引用此模块即可。
@@ -44,6 +56,12 @@ root
 + 查询火车票
 + 查询中途停靠站列表
 + 收集所有火车站数据
+
+## V1.0.0
+2017/07/20 18:38 实现网页版小工具
+  可以输入中文站名、日期，从而查询火车
+  点击结果列表还可以查看本次列车的途经站点信息
+
 
 ---
 

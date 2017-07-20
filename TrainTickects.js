@@ -127,7 +127,7 @@ function PrintTickects(config, tickects) {
 				  +"|"+_padding_str(tickects[i].ruanwo, 4)
 				  +"|"+_padding_str(tickects[i].yingwo, 4)
 				  +"|"+_padding_str(tickects[i].ruanzuo, 4)
-				  +"|"+_padding_str(tickects[i].yingwo, 4)
+				  +"|"+_padding_str(tickects[i].yingzuo, 4)
 				  +"|"+_padding_str(tickects[i].wuzuo, 4)
 				  +"|"
 
@@ -173,7 +173,7 @@ function PrintStationList(sList) {
 
 				  +"|"+stations
 				  +"|"+_padding_str1(sList[i].arrive_time, 8)
-				  +"|"+_padding_str1(sList[i].arrive_time, 8)
+				  +"|"+_padding_str1(sList[i].start_time, 8)
 				  +"|"+_padding_str2(sList[i].stopover_time, 8)
 
 				  +"|"
@@ -253,7 +253,7 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 
 			// console.log(result[0])
 			// console.log(result[0])
-			console.log(result[0].split("|"))
+			// console.log(result[0].split("|"))
 
 			for(var i=0; i<trainnum; i++) 
 			{

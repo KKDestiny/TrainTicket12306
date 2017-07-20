@@ -251,7 +251,9 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 			var map = data.map
 			var trainnum = result.length;
 
-			// console.log(result[0].split("|"))
+			// console.log(result[0])
+			// console.log(result[0])
+			console.log(result[0].split("|"))
 
 			for(var i=0; i<trainnum; i++) 
 			{
@@ -275,8 +277,8 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 				tickect.yingwo = temp[28];  // 硬卧
 				tickect.yingzuo = temp[29]; // 硬座
 
-				tickect.fcSeat = temp[31];	// 一等座
 				tickect.scSeat = temp[30];	// 二等座
+				tickect.fcSeat = temp[31];	// 一等座
 				tickect.bcSeat = temp[32];	// 商务座 / 特等座
 
 				tickect.dongwo = temp[33];	// 动卧

@@ -5,6 +5,9 @@
 
 An app to query Tickects and other information from 12306 website by node.js
 
+![img](https://raw.githubusercontent.com/KKDestiny/TrainTicket12306/master/doc/8.jpg)
+![img](https://raw.githubusercontent.com/KKDestiny/TrainTicket12306/master/doc/9.jpg)
+
 ---
 
 ## master branch

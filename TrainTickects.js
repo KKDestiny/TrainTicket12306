@@ -271,6 +271,9 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 				tickect.tTime = temp[10];	// Total Time
 				tickect.date = temp[13];
 
+				tickect.from_station_no = temp[16];	// 出发地车序
+				tickect.to_station_no = temp[17];	// 目的地车序
+
 				tickect.ruanwo = temp[23];	// 软卧
 				tickect.ruanzuo = temp[24]; // 软座
 				tickect.wuzuo = temp[26];	// 无座
@@ -282,6 +285,8 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 				tickect.bcSeat = temp[32];	// 商务座 / 特等座
 
 				tickect.dongwo = temp[33];	// 动卧
+
+				tickect.seat_types = temp[35];
 				
 				Tickects.push(tickect)
 			}
@@ -384,6 +389,85 @@ OL_TrainTickects.prototype.QueryStations = function(config, callback) {
 	})
 }
 
+
+
+
+
+/**
+ *@Func  : 查询票价
+ *@Input1 : config - 配置参数: {
+					train_no         : String, 列车编号, 如"650000Z23001"
+					from_station_no  : String, 出发地车序，如"01"
+					to_station_no    : String, 目的地车序，如"23"
+					seat_types       : String, 如"113"
+					train_date       : String, 乘车日期，如"2017-07-23"
+					print  		     : boolean, 是否后台打印
+				}
+ *@Input2: callback - 回调函数，返回的第一个参数为err
+ */
+OL_TrainTickects.prototype.QueryStations = function(config, callback) {
+	/* config Demo
+	var Config = {
+		train_no        : '650000Z23001',	// 列车编号
+		from_station_no : '01',				// 出发地车序
+		to_station_no   : '23',				// 目的地车序
+		seat_types      : '113',			// 如"113"
+		train_date      : '2017-07-23',		// 日期, 格式"yyyy-mm-dd"
+	};
+	*/
+
+	// Config
+	var query_lefttickets = 'leftTicket/queryTicketPrice?'
+								+'train_no='+config.train_no
+								+'&from_station_no='+config.from_station_no
+								+'&to_station_no='+config.to_station_no
+								+'&seat_types='+config.seat_types
+								+'&train_date='+config.train_date;
+	var options = {
+		rejectUnauthorized: false,  	 // 如果报错"SELF_SIGNED_CERT_IN_CHAIN"，则必须加上这个设置
+		hostname: 'kyfw.12306.cn',		 //12306官网
+		path: '/otn/'+query_lefttickets,
+		ca : [CA_Cert]
+	}
+
+	// Cache
+	var DataBuf = "";
+
+	// Request
+	var req = https.get(options, function(res){ 
+		res.on('data',function(buf){
+			DataBuf += buf;
+		}); 
+
+		res.on('end',function(){
+			var resdata = JSON.parse(DataBuf);
+			if(!resdata.status) {
+				if(callback) {
+					callback(err, null);
+				}
+				console.log(resdata.status)
+				return
+			}
+			var data = resdata.data;
+
+			// Print Tickect List
+			if(config.print) {
+				console.log(data)
+			}
+
+			if(callback) {
+				callback(null, data);
+			}
+		});
+	});
+
+	req.on('error', function(err){
+		if(callback) {
+			callback(err, null);
+		}
+		console.error(err.code);
+	})
+}
 
 
 

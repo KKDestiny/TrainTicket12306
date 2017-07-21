@@ -11,6 +11,21 @@ var OL_TrainTickects = require('./TrainTickects');
 
 
 
+// 测试查询票价
+var Config = {
+		train_no        : '650000Z23001',	// 列车编号
+		from_station_no : '01',				// 出发地车序
+		to_station_no   : '23',				// 目的地车序
+		seat_types      : '113',			// 如"113"
+		train_date      : '2017-07-23',		// 日期, 格式"yyyy-mm-dd"
+	};
+OL_TrainTickects.QueryStations(Config, function(err, tickects) {
+	console.log(tickects)
+});
+return
+
+
+
 // 测试查询火车票
 var Config = {
 		date         : '2017-07-24',	// 日期, 格式"yyyy-mm-dd"

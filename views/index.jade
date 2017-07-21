@@ -53,6 +53,12 @@ block content
 
 
 					button.btn.btn-outline-primary(style="margin-left:10px;" onclick="OL_TrainTickets.query()") 查询
+
+					.input-group(style="margin-left:10px;" title="如：搜索[北京]，则不会出现[北京西]的车次")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" onchange="Monitor_Station_Strict(this)")#ol_tt_strict_station
+								|  精准车站
 				br
 
 				//-查询结果列表

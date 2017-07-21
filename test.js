@@ -19,7 +19,7 @@ var Config = {
 		seat_types      : '113',			// 如"113"
 		train_date      : '2017-07-23',		// 日期, 格式"yyyy-mm-dd"
 	};
-OL_TrainTickects.QueryStations(Config, function(err, tickects) {
+OL_TrainTickects.QueryPrice(Config, function(err, tickects) {
 	console.log(tickects)
 });
 return

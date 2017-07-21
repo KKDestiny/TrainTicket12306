@@ -405,7 +405,7 @@ OL_TrainTickects.prototype.QueryStations = function(config, callback) {
 				}
  *@Input2: callback - 回调函数，返回的第一个参数为err
  */
-OL_TrainTickects.prototype.QueryStations = function(config, callback) {
+OL_TrainTickects.prototype.QueryPrice = function(config, callback) {
 	/* config Demo
 	var Config = {
 		train_no        : '650000Z23001',	// 列车编号

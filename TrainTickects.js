@@ -260,6 +260,7 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 				var tickect = {};
 				var temp = result[i].split("|");
 
+				tickect.status = temp[1];	// 状态（预订 / 列车运行图调整,暂停发售 / ...）
 				tickect.train_no = temp[2];	// 火车编号
 				tickect.tId = temp[3];	    // Train ID
 

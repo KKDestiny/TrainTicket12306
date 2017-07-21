@@ -195,7 +195,7 @@ OL_TrainTickects.QueryStations(Config, function(err, sList) {
 
 ---
 
-## 4.3 OL_TrainTickects.CollectStations()
+## 4.4 OL_TrainTickects.CollectStations()
 
 手机全国所有火车站的数据。
 
@@ -227,7 +227,45 @@ OL_TrainTickects.CollectStations(function(err, data) {
 
 ---
 
-# 4.4 余票查询的返回数据
+## 4.5 OL_TrainTickects.QueryPrice()
+
+查询火车票价格。
+
+此接口为 `TrainTickects` 模块提供的接口，需要传入两个参数：`config` 和 `callback`。
+
+其中 `config` 为对象，其属性包括：
+
++ `train_no`         : String, 列车编号, 如"650000Z23001"
++ `from_station_no`  : String, 出发地车序，如"01"
++ `to_station_no`    : String, 目的地车序，如"23"
++ `seat_types`      : String, 如"113"
++ `train_date`       : String, 乘车日期，如"2017-07-23"
++ `print`          : boolean, 是否后台打印
+
+`callback` 为回调函数，允许为空。
+
+
+下面为一个简单的测试例子：
+
+```javascript
+// 测试查询票价
+var Config = {
+    train_no        : '650000Z23001', // 列车编号
+    from_station_no : '01',       // 出发地车序
+    to_station_no   : '23',       // 目的地车序
+    seat_types      : '113',      // 如"113"
+    train_date      : '2017-07-23',   // 日期, 格式"yyyy-mm-dd"
+  };
+OL_TrainTickects.QueryPrice(Config, function(err, tickects) {
+  console.log(tickects)
+});
+```
+
+---
+
+# 5.一些问题
+
+# 5.1 余票查询的返回数据
 
 从12306获取到的原始数据结构如下：
 
@@ -258,13 +296,13 @@ OL_TrainTickects.CollectStations(function(err, data) {
 `map`的作用在于，当我们查询 `深圳` 到 `厦门` 的火车票时，可能出现 `深圳北` 、`厦门北` 这样的车站，它们和 `深圳` 到 `厦门`不同，需要做好对应关系。
 
 
-关于如何使用这个映射关系，在4.6节会做介绍。
+关于如何使用这个映射关系，在5.3节会做介绍。
 
 
 ---
 
 
-## 4.5  关于余票信息的数据处理
+## 5.2  关于余票信息的数据处理
 
 从12306获取到的每一个车次的余票信息的原始数据如下：
 
@@ -421,9 +459,9 @@ tickect.dongwo = temp[33];	// 动卧
 ---
 
 
-## 4.6 始发站/终点站 与 出发站/到达站
+## 5.3 始发站/终点站 与 出发站/到达站
 
-4.5中的余票数据中，有四个站点代码：
+5.1中的余票数据中，有四个站点代码：
 
 ```
 /* 4 */  'IOQ',

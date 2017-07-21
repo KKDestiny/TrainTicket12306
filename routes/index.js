@@ -76,6 +76,28 @@ router.post('/stations', function(req, res, next) {
 	});
 });
 
+// 查询火车票价
+router.post('/price', function(req, res, next) {
+	var Config = {
+		train_no        : '650000Z23001',	// 列车编号
+		from_station_no : '01',				// 出发地车序
+		to_station_no   : '23',				// 目的地车序
+		seat_types      : '113',			// 如"113"
+		train_date      : '2017-07-23',		// 日期, 格式"yyyy-mm-dd"
+	};
+	OL_TrainTickects.QueryStations(Config, function(err, tickects) {
+		if(!err) {
+			res.json({success:"SUCCESS", data:tickects})
+		}
+		else {
+			res.json({error:err})
+		}
+	});
+	OL_TrainTickects.QueryStations(Config, function(err, sList) {
+		
+	});
+});
+
 
 
 

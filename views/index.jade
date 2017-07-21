@@ -59,6 +59,39 @@ block content
 							label.form-check-label
 								input(type="checkbox" onchange="Monitor_Station_Strict(this)")#ol_tt_strict_station
 								|  精准车站
+
+				div.form-inline
+					.input-group(style="margin-left:0px;")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" checked onchange="Monitor_Station_Type('GC')")#ol_tt_type_gc
+								|  G/C-高铁/城际
+					.input-group(style="margin-left:20px;")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" checked onchange="Monitor_Station_Type('D')")#ol_tt_type_d
+								|  D-动车
+					.input-group(style="margin-left:20px;")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" checked onchange="Monitor_Station_Type('Z')")#ol_tt_type_z
+								|  Z-直达
+					.input-group(style="margin-left:20px;")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" checked onchange="Monitor_Station_Type('T')")#ol_tt_type_t
+								|  T-特快
+					.input-group(style="margin-left:20px;")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" checked onchange="Monitor_Station_Type('K')")#ol_tt_type_k
+								|  K-快车
+					.input-group(style="margin-left:20px;")
+						.form-check.form-check-inline
+							label.form-check-label
+								input(type="checkbox" checked onchange="Monitor_Station_Type('Others')")#ol_tt_type_others
+								|  其他
+
 				br
 
 				//-查询结果列表

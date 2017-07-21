@@ -24,9 +24,10 @@ element分支为所有功能的原型
 
 # 1.安装 Installation
 
-+ 如果直接使用模块`TrainTickects`，则不需要任何依赖，直接引用此模块即可。
++ 如果直接使用模块`TrainTickects`，则不需要任何依赖，直接引用此模块即可。建议切换到 `element` 分支，这个是核心部分。
 
-Require `TrainTickects` directly if you just want to use `TrainTickects` module.
+Require `TrainTickects` directly if you just want to use `TrainTickects` module. It's recommended to use branch `element`, which is core part of all.
+
 
 + 如果你要查看网页Demo，则需要安装，直接执行 `npm install` 即可。
 
@@ -36,9 +37,9 @@ Execute `npm install` to install modules needed automaticly if you want to check
 
 # 2.文件结构 FileStructure
 
-主要文件结构如下：
+`element`分支的主要文件结构如下：
 
-Main Structure:
+Main Structure of branch `element`:
 
 ```
 root
@@ -184,6 +185,7 @@ OL_TrainTickects.QueryStations(Config, function(err, sList) {
 ```
 
 执行效果：
+
 ![upload.png](https://raw.githubusercontent.com/KKDestiny/TrainTicket12306/master/doc/2.png)
 
 
@@ -313,7 +315,7 @@ arr = raw_data.split("|");
 
 不过，根据我们已知的情况， `arr[3]` 肯定是车次， `arr[8]` 肯定是发车时间， `arr[9]` 肯定是到达时间， `arr[10]` 肯定是总时间， `arr[13]` 肯定是乘车日期。
 
-另外，根据后来做 `OL_TrainTickects.QueryStations()` 的时候分析其接口时可以知道：`arr[2]` 肯定是列车编号，这个编号可以用在后面查询某车次中途停靠站信息中。
+另外，根据后来做 `OL_TrainTickects.QueryStations()` 的时候分析其接口时可以知道：`arr[2]` 肯定是列车编号， 这个编号可以用在后面查询某车次中途停靠站信息中。
 
 因此源代码中，是这样处理的：
 
@@ -345,6 +347,7 @@ tickect.date = temp[13];
 这里提供一种比较笨的方法：大量查找不同起止站的列车，推理出各类坐席剩余票数在原始数据中的位置。
 
 举个例子，我们在12306官网中查询一下`深圳`-`郑州`的列车：
+
 ![upload.png](https://raw.githubusercontent.com/KKDestiny/TrainTicket12306/master/doc/6.png)
 
 可以知道商务座、一二等座的票数分别为 `16` `12` 和 `有`。那么我们同时查看余票的原始数据：
@@ -428,6 +431,7 @@ tickect.dongwo = temp[33];	// 动卧
 发现4和6、5和7是一样的代码。原因很简单，因为我们出发的火车站就是始发站、到达的火车站就是终点站。
 
 那么到底前两个是始发站/终点站，还是后两个是？我们可以在12306官网找一个例子：`深圳`-`梅州`的列车只有一趟，很好分析：
+
 ![upload.png](https://raw.githubusercontent.com/KKDestiny/TrainTicket12306/master/doc/7.png)
 
 所以我们可以更改一下查询条件：`惠州`-`兴宁`，结果为：
@@ -475,6 +479,7 @@ tickect.tSation = TMapStations(temp[7], map);	// To Station Name
 # 感谢
 
 感谢 **落花落雨不落叶** 的博文提供的帮助！
+
 http://www.cnblogs.com/hongrunhui/p/6284192.html
 
 

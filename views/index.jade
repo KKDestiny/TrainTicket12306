@@ -39,11 +39,19 @@ block content
 				label 站点
 				div.form-inline
 					.input-group
-						input.form-control(type="text" placeholder="出发站")#ol_tt_fromStation
-					.input-group
-						input.form-control(type="text" placeholder="终点站")#ol_tt_toStation
+						input.form-control(type="text" placeholder="出发站" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onkeyup="Monitor_Station_Input(this)")#ol_tt_fromStation
+						.dropdown-menu(style="max-height:200px; overflow-y:auto; width:100%; overflow-x:hidden;")#ol_tt_fromStation_opts
+							h6.dropdown-header 输入中文或拼音
+
+
+					.input-group(style="margin-left:30px;")
+						input.form-control(type="text" placeholder="终点站" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onkeyup="Monitor_Station_Input(this)")#ol_tt_toStation
+						.dropdown-menu(style="max-height:200px; overflow-y:auto; width:100%; overflow-x:hidden;")#ol_tt_toStation_opts
+							h6.dropdown-header 输入中文或拼音
 					|  
-					button.btn.btn-outline-primary(onclick="OL_TrainTickets.query()") 查询
+
+
+					button.btn.btn-outline-primary(style="margin-left:30px;" onclick="OL_TrainTickets.query()") 查询
 				br
 
 				//-查询结果列表
@@ -71,6 +79,8 @@ block content
 
 
 	script(src='/js/lib/jquery.min.js')
+	script(src='/js/lib/tether.min.js')
+	script(src='/js/lib/bootstrap.min.js')
 	script(src='/js/public.js')
 	script(src='/js/function.js')
 	script(src='/js/stations_py.js')

@@ -265,7 +265,7 @@ OL_TrainTickects.QueryPrice(Config, function(err, tickects) {
 
 # 5.一些问题
 
-# 5.1 余票查询的返回数据
+## 5.1 余票查询的返回数据
 
 从12306获取到的原始数据结构如下：
 

@@ -237,10 +237,17 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 		}); 
 
 		res.on('end',function(){
-			var resdata = JSON.parse(DataBuf);
+			var resdata = {};
+			try{
+				resdata = JSON.parse(DataBuf);
+			}
+			catch(e) {
+				callback({error:e, info:DataBuf}, null);
+				return
+			}
 			if(!resdata.status) {
 				if(callback) {
-					callback(err, null);
+					callback({error:resdata.status}, null);
 				}
 				console.log(resdata.status)
 				return
@@ -360,10 +367,17 @@ OL_TrainTickects.prototype.QueryStations = function(config, callback) {
 		}); 
 
 		res.on('end',function(){
-			var resdata = JSON.parse(DataBuf);
+			var resdata = {};
+			try{
+				resdata = JSON.parse(DataBuf);
+			}
+			catch(e) {
+				callback({error:e, info:DataBuf}, null);
+				return
+			}
 			if(!resdata.status) {
 				if(callback) {
-					callback(err, null);
+					callback({error:resdata.status}, null);
 				}
 				console.log(resdata.status)
 				return
@@ -441,10 +455,17 @@ OL_TrainTickects.prototype.QueryPrice = function(config, callback) {
 		}); 
 
 		res.on('end',function(){
-			var resdata = JSON.parse(DataBuf);
+			var resdata = {};
+			try{
+				resdata = JSON.parse(DataBuf);
+			}
+			catch(e) {
+				callback({error:e, info:DataBuf}, null);
+				return
+			}
 			if(!resdata.status) {
 				if(callback) {
-					callback(err, null);
+					callback({error:resdata.status}, null);
 				}
 				console.log(resdata.status)
 				return

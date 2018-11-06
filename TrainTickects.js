@@ -223,7 +223,10 @@ OL_TrainTickects.prototype.QueryTickects = function(config, callback) {
 		rejectUnauthorized: false,  	 // 如果报错"SELF_SIGNED_CERT_IN_CHAIN"，则必须加上这个设置
 		hostname: 'kyfw.12306.cn',		 //12306官网
 		path: '/otn/'+query_lefttickets,
-		ca : [CA_Cert]
+		ca : [CA_Cert],
+		headers: {
+	        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+	    },
 	}
 
 	// Cache
@@ -354,7 +357,10 @@ OL_TrainTickects.prototype.QueryStations = function(config, callback) {
 		rejectUnauthorized: false,  	 // 如果报错"SELF_SIGNED_CERT_IN_CHAIN"，则必须加上这个设置
 		hostname: 'kyfw.12306.cn',		 //12306官网
 		path: '/otn/'+query_lefttickets,
-		ca : [CA_Cert]
+		ca : [CA_Cert],
+		headers: {
+	        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+	    },
 	}
 
 	// Cache
@@ -442,7 +448,10 @@ OL_TrainTickects.prototype.QueryPrice = function(config, callback) {
 		rejectUnauthorized: false,  	 // 如果报错"SELF_SIGNED_CERT_IN_CHAIN"，则必须加上这个设置
 		hostname: 'kyfw.12306.cn',		 //12306官网
 		path: '/otn/'+query_lefttickets,
-		ca : [CA_Cert]
+		ca : [CA_Cert],
+		headers: {
+	        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+	    },
 	}
 
 	// Cache
@@ -502,7 +511,10 @@ OL_TrainTickects.prototype.CollectStations = function(callback){
 		rejectUnauthorized: false,  // 如果报错"SELF_SIGNED_CERT_IN_CHAIN"，则必须加上这个设置
 		hostname	: 'kyfw.12306.cn',
 		path 		: '/otn/resources/js/framework/station_name.js?station_version=1.8964',
-		ca 			: [CA_Cert]
+		ca 			: [CA_Cert],
+		headers: {
+	        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+	    },
 	};
 	var Raw = '';
 	var req = https.get(option, function(res){
